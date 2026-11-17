@@ -1,0 +1,65 @@
+============================= test session starts ==============================
+platform linux -- Python 3.14.2, pytest-9.2.0, pluggy-1.7.0 -- /workspaces/corporate-event-management-api/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /workspaces/corporate-event-management-api
+configfile: pytest.ini
+testpaths: tests
+plugins: anyio-4.16.0, asyncio-1.5.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=function, asyncio_default_test_loop_scope=function
+collecting ... collected 53 items
+
+tests/test_auth.py::test_signup_returns_user_without_password PASSED     [  1%]
+tests/test_auth.py::test_duplicate_signup_returns_conflict PASSED        [  3%]
+tests/test_auth.py::test_login_returns_bearer_token PASSED               [  5%]
+tests/test_auth.py::test_login_rejects_wrong_password PASSED             [  7%]
+tests/test_auth.py::test_event_mutations_require_authentication[post-body0] PASSED [  9%]
+tests/test_auth.py::test_event_mutations_require_authentication[put-body1] PASSED [ 11%]
+tests/test_auth.py::test_event_mutations_require_authentication[delete-None] PASSED [ 13%]
+tests/test_auth.py::test_event_mutations_reject_invalid_tokens[post-body0] PASSED [ 15%]
+tests/test_auth.py::test_event_mutations_reject_invalid_tokens[put-body1] PASSED [ 16%]
+tests/test_auth.py::test_event_mutations_reject_invalid_tokens[delete-None] PASSED [ 18%]
+tests/test_auth.py::test_event_mutations_reject_expired_and_unknown_user_tokens PASSED [ 20%]
+tests/test_auth.py::test_event_list_is_public PASSED                     [ 22%]
+tests/test_auth.py::test_password_is_never_returned PASSED               [ 24%]
+tests/test_events.py::test_create_event_returns_created_resource PASSED  [ 26%]
+tests/test_events.py::test_list_events_returns_created_event PASSED      [ 28%]
+tests/test_events.py::test_get_event_returns_matching_event PASSED       [ 30%]
+tests/test_events.py::test_update_event_changes_provided_fields PASSED   [ 32%]
+tests/test_events.py::test_update_event_rejects_null_non_nullable_fields[title] PASSED [ 33%]
+tests/test_events.py::test_update_event_rejects_null_non_nullable_fields[event_date] PASSED [ 35%]
+tests/test_events.py::test_update_event_rejects_null_non_nullable_fields[location] PASSED [ 37%]
+tests/test_events.py::test_update_event_rejects_null_non_nullable_fields[max_capacity] PASSED [ 39%]
+tests/test_events.py::test_delete_event_then_get_returns_not_found PASSED [ 41%]
+tests/test_events.py::test_get_missing_event_returns_not_found PASSED    [ 43%]
+tests/test_events.py::test_create_event_rejects_invalid_payloads[payload0] PASSED [ 45%]
+tests/test_events.py::test_create_event_rejects_invalid_payloads[payload1] PASSED [ 47%]
+tests/test_events.py::test_create_event_rejects_invalid_payloads[payload2] PASSED [ 49%]
+tests/test_events.py::test_create_event_rejects_invalid_payloads[payload3] PASSED [ 50%]
+tests/test_events.py::test_create_event_rejects_invalid_payloads[payload4] PASSED [ 52%]
+tests/test_events.py::test_create_event_rejects_invalid_payloads[payload5] PASSED [ 54%]
+tests/test_events.py::test_create_event_accepts_timezone_aware_datetime PASSED [ 56%]
+tests/test_events.py::test_event_pagination_applies_limit_and_skip PASSED [ 58%]
+tests/test_events.py::test_event_pagination_rejects_invalid_bounds[limit=0] PASSED [ 60%]
+tests/test_events.py::test_event_pagination_rejects_invalid_bounds[limit=1000] PASSED [ 62%]
+tests/test_events.py::test_event_pagination_rejects_invalid_bounds[skip=-1] PASSED [ 64%]
+tests/test_events.py::test_event_title_filter_is_case_insensitive PASSED [ 66%]
+tests/test_events.py::test_event_date_filter_matches_calendar_day PASSED [ 67%]
+tests/test_events.py::test_event_filters_combine_with_each_other PASSED  [ 69%]
+tests/test_openapi.py::test_openapi_defines_descriptive_tags PASSED      [ 71%]
+tests/test_openapi.py::test_operations_document_success_status_codes_and_responses PASSED [ 73%]
+tests/test_openapi.py::test_success_response_models_have_examples PASSED [ 75%]
+tests/test_openapi.py::test_operations_document_error_schemas_and_examples PASSED [ 77%]
+tests/test_openapi.py::test_request_bodies_have_examples PASSED          [ 79%]
+tests/test_registrations.py::test_register_for_event_returns_created_registration PASSED [ 81%]
+tests/test_registrations.py::test_list_event_registrations_returns_created_registration PASSED [ 83%]
+tests/test_registrations.py::test_list_event_registrations_applies_pagination PASSED [ 84%]
+tests/test_registrations.py::test_cancel_registration_returns_no_content PASSED [ 86%]
+tests/test_registrations.py::test_duplicate_email_is_case_insensitive PASSED [ 88%]
+tests/test_registrations.py::test_full_event_rejects_an_additional_registration PASSED [ 90%]
+tests/test_registrations.py::test_registration_for_missing_event_returns_not_found PASSED [ 92%]
+tests/test_registrations.py::test_registration_rejects_invalid_email PASSED [ 94%]
+tests/test_registrations.py::test_cancel_missing_registration_returns_not_found PASSED [ 96%]
+tests/test_registrations.py::test_capacity_cannot_be_lowered_below_registration_count PASSED [ 98%]
+tests/test_registrations.py::test_deleting_event_removes_its_registrations PASSED [100%]
+
+============================= 53 passed in 12.61s ==============================
