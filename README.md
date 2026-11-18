@@ -194,3 +194,39 @@ ruff format --check .
 ## AI usage
 
 See [docs/AI_USAGE.md](docs/AI_USAGE.md) for the tools, settings, prompts, and chat-history note.
+
+## API Screenshots and Sanitized Response Summaries
+
+### API documentation
+
+Screenshot 01 (Swagger endpoint overview) has not been captured yet.
+
+### Authentication
+
+![Signup response with credentials redacted](docs/screenshots/signup-redacted.svg)
+![Login response with access token redacted](docs/screenshots/login-redacted.svg)
+![Authorization dialog with credentials redacted](docs/screenshots/authorization-redacted.svg)
+
+### Events
+
+![Create event response with authorization redacted](docs/screenshots/event-create-redacted.svg)
+![List events](<docs/screenshots/Get Event (List events).png>)
+![Get event](<docs/screenshots/Get one Event (Event_Id).png>)
+![Update event response with authorization redacted](docs/screenshots/event-update-redacted.svg)
+![Delete event response with authorization redacted](docs/screenshots/event-delete-redacted.svg)
+
+### Registrations and errors
+
+![Create registration](<docs/screenshots/Event Registration.png>)
+![List registrations](<docs/screenshots/Event Registration (List).png>)
+![Delete registration](<docs/screenshots/Delete Registration Id.png>)
+![Duplicate registration](<docs/screenshots/Duplicate Registration-409.png>)
+![Event full](<docs/screenshots/Event is Full.png>)
+![Event not found](<docs/screenshots/Non Existent Event.png>)
+![Event validation response with authorization redacted](docs/screenshots/event-validation-redacted.svg)
+![Validation error with authorization redacted](docs/screenshots/validation-error-redacted.svg)
+![Pagination and filtering](<docs/screenshots/Pagination and Filter-200.png>)
+
+### Test suite
+
+![Pytest output](<docs/screenshots/py-test-output.png>)
